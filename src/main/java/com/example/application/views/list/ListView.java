@@ -1,6 +1,7 @@
 package com.example.application.views.list;
 
 import com.example.application.data.entity.Contact;
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -25,9 +26,17 @@ public class ListView extends VerticalLayout {
         configureGrid();
         configureForm();
 
-        add(getToolbar(), grid);
+        add(getToolbar(), getContent());
     }
 
+    private Component getContent() {
+        HorizontalLayout content = new HorizontalLayout();
+        content.setFlexGrow(2, grid);
+        content.setFlexGrow( 1,form);
+        content.setSizeFull();
+
+        return content;
+    }
 
     private void configureGrid() {
         grid.addClassNames("contact-grid");
