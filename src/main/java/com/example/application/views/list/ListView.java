@@ -40,7 +40,7 @@ public class ListView extends VerticalLayout {
 
         Button addContactButton = new Button("Add contact");
 
-        var toolbar = new HorizontalLayout(filterText, addContactButton);
+        HorizontalLayout toolbar = new HorizontalLayout(filterText, addContactButton);
         toolbar.addClassName("toolbar");
         return toolbar;
     }
