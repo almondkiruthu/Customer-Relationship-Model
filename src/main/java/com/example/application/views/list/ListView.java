@@ -30,12 +30,17 @@ public class ListView extends VerticalLayout {
     }
 
     private Component getContent() {
-        HorizontalLayout content = new HorizontalLayout();
+        HorizontalLayout content = new HorizontalLayout(grid, form);
         content.setFlexGrow(2, grid);
         content.setFlexGrow( 1,form);
         content.setSizeFull();
 
         return content;
+    }
+
+    private void configureForm() {
+        form = new ContactForm(Collections.emptyList(), Collections.emptyList());
+        form.setWidth("25em");
     }
 
     private void configureGrid() {
@@ -59,8 +64,4 @@ public class ListView extends VerticalLayout {
         return toolbar;
     }
 
-    private void configureForm() {
-        form = new ContactForm(Collections.emptyList(), Collections.emptyList());
-        form.setWidth("25em");
-    }
 }
