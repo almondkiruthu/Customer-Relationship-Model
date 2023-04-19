@@ -22,7 +22,7 @@ public class ContactForm extends FormLayout {
 
     Button save = new Button("Save");
     Button delete = new Button("Delete");
-    Button close = new Button("Cancel");
+    Button cancel = new Button("Cancel");
 
     public ContactForm(List<Company> companies, List<Status> statuses) {
         addClassName("contact-form");
@@ -43,11 +43,11 @@ public class ContactForm extends FormLayout {
     private HorizontalLayout createButtonsLayout() {
         save.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         delete.addThemeVariants(ButtonVariant.LUMO_ERROR);
-        close.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
+        cancel.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
 
         save.addClickShortcut(Key.ENTER);
-        close.addClickShortcut(Key.ESCAPE);
+        cancel.addClickShortcut(Key.ESCAPE);
 
-        return new HorizontalLayout(save, delete, close);
+        return new HorizontalLayout(save, delete, cancel);
     }
 }
