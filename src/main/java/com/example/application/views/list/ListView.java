@@ -1,5 +1,7 @@
 package com.example.application.views.list;
 
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Paragraph;
@@ -13,21 +15,13 @@ import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 public class ListView extends VerticalLayout {
 
     public ListView() {
-        setSpacing(false);
+      Button button = new Button("Spring boot reload");
 
-        Image img = new Image("images/empty-plant.png", "placeholder plant");
-        img.setWidth("200px");
-        add(img);
+      add(button);
 
-        H2 header = new H2("This place intentionally left empty");
-        header.addClassNames(Margin.Top.XLARGE, Margin.Bottom.MEDIUM);
-        add(header);
-        add(new Paragraph("It’s a place where you can grow your own UI 🤗"));
+      Button button1 = new Button("Revise");
 
-        setSizeFull();
-        setJustifyContentMode(JustifyContentMode.CENTER);
-        setDefaultHorizontalComponentAlignment(Alignment.CENTER);
-        getStyle().set("text-align", "center");
+      add(button1);
     }
 
 }
