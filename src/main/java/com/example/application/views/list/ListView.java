@@ -10,19 +10,24 @@ import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
+import java.util.Collections;
+
 @Route(value = "")
 @PageTitle("Contacts | Vaadin CRM")
 public class ListView extends VerticalLayout {
     Grid<Contact> grid = new Grid<>(Contact.class);
     TextField filterText = new TextField();
+    ContactForm form;
 
     public ListView() {
         addClassName("list-view");
         setSizeFull();
         configureGrid();
+        configureForm();
 
         add(getToolbar(), grid);
     }
+
 
     private void configureGrid() {
         grid.addClassNames("contact-grid");
@@ -43,5 +48,10 @@ public class ListView extends VerticalLayout {
         HorizontalLayout toolbar = new HorizontalLayout(filterText, addContactButton);
         toolbar.addClassName("toolbar");
         return toolbar;
+    }
+
+    private void configureForm() {
+        form = new ContactForm(Collections.emptyList(), Collections.emptyList());
+        form.setWidth("25em");
     }
 }
