@@ -1,6 +1,7 @@
 package com.example.application.views.list;
 
 import com.example.application.data.entity.Company;
+import com.example.application.data.entity.Contact;
 import com.example.application.data.entity.Status;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
@@ -10,6 +11,8 @@ import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.EmailField;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.data.binder.BeanValidationBinder;
+import com.vaadin.flow.data.binder.Binder;
 
 import java.util.List;
 
@@ -49,5 +52,14 @@ public class ContactForm extends FormLayout {
         cancel.addClickShortcut(Key.ESCAPE);
 
         return new HorizontalLayout(save, delete, cancel);
+    }
+
+    // Other fields omitted
+    Binder<Contact> binder = new BeanValidationBinder<>(Contact.class);
+
+    public ContactForm(List<Company> companies, List<Status> statuses) {
+        addClassName("contact-form");
+        binder.bindInstanceFields(this);
+        // Rest of constructor omitted
     }
 }
