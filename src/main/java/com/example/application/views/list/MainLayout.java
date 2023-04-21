@@ -27,7 +27,7 @@ public class MainLayout extends AppLayout {
                 LumoUtility.Margin.MEDIUM);
 
         String u = securityService.getAuthenticatedUser().getUsername();
-        Button logout = new Button("log out" + u, e-> securityService.logout());
+        Button logout = new Button("log out " + u, e-> securityService.logout());
 
         HorizontalLayout header = new HorizontalLayout(new DrawerToggle(), logo, logout );
 
