@@ -17,8 +17,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @Theme(value = "flowcrmtutorial")
 @PWA(name = "CRM MODEL",
         shortName = "CRM",
-        offlinePath = "offline.html",
-        offlineResources = "./images/offline.png"
+        offlinePath = "CRM-MODEL/src/main/resources/META-INF/resources/offline.html",
+        offlineResources = "/images/offline.png"
 )
 public class Application implements AppShellConfigurator {
 
